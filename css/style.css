@@ -1,0 +1,73 @@
+body, html {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  color: #272822;
+  background-color: #f7f7f5; }
+
+pre, textarea {
+  font-size: 16px;
+  font-family: Consolas, Monaco, 'Andale Mono', monospace; }
+
+.container {
+  position: relative;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  width: 70%;
+  min-width: 500px;
+  max-width: 900px;
+  margin: 0 auto; }
+
+#output, #console {
+  box-sizing: border-box;
+  width: 100%;
+  position: absolute;
+  left: 0px; }
+
+#output {
+  bottom: 150px; }
+
+.out-block {
+  display: block;
+  padding: 10px;
+  border-radius: 10px !important;
+  background-color: #272822;
+  cursor: pointer; }
+  .out-block:hover {
+    background-color: #1a1a16; }
+
+.result-block {
+  box-sizing: border-box;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  display: block;
+  padding: 2px 20px 10px;
+  color: #272822;
+  width: 100%; }
+
+#console {
+  color: #272822;
+  padding: 10px;
+  height: 150px;
+  bottom: 0px;
+  outline-color: transparent;
+  outline: none;
+  border-radius: 10px 10px 0px 0px;
+  border: 1px solid #c2c3b9;
+  border-bottom: 0px;
+  background-color: #f7f7f5;
+  resize: none;
+  background-color: #fefefe; }
+  #console:focus {
+    background-color: white; }
+
+@media screen and (max-width: 500px) {
+  .container {
+    min-width: 200px;
+    width: 100%; }
+
+  #console, .out-block {
+    border-radius: 0px !important;
+    border-left: 0px;
+    border-right: 0px; } }

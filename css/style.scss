@@ -1,0 +1,90 @@
+$dark-grey: rgb(39, 40, 34);
+$grey: lighten($dark-grey, 60%);
+$light-grey: lighten($grey, 22%);
+
+body, html {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	color: $dark-grey;
+	background-color: $light-grey;
+}
+
+pre , textarea {
+	font-size: 16px;
+	font-family: Consolas, Monaco, 'Andale Mono', monospace;
+}
+
+.container {
+	position: relative;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	width: 70%;
+	min-width: 500px;
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+#output, #console {
+	box-sizing: border-box;
+	width: 100%;
+	position: absolute;
+	left: 0px;
+}
+
+#output {
+	bottom: 150px;
+}
+
+.out-block {
+	display: block;
+	padding: 10px;
+	border-radius: 10px !important;
+	background-color: $dark-grey;
+	cursor: pointer;
+	&:hover {
+		background-color: darken($dark-grey, 5%);
+	}
+}
+
+.result-block {
+	box-sizing: border-box;
+	white-space: pre-wrap;
+	overflow-x: auto;
+	display: block;
+	padding: 2px 20px 10px;
+
+	color: $dark-grey;
+	width: 100%;
+}
+
+#console {
+	color: $dark-grey;
+	padding: 10px;
+	height: 150px;
+	bottom: 0px;
+	outline-color: transparent;
+	outline: none;
+	border-radius: 10px 10px 0px 0px;
+	border: 1px solid $grey;
+	border-bottom: 0px;
+	background-color: $light-grey;
+	resize: none;
+	background-color: lighten($light-grey, 3%);
+	&:focus {
+		background-color: lighten($light-grey, 5%);
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.container {
+		min-width: 200px;
+		width: 100%;
+	}
+	#console, .out-block {
+		border-radius: 0px !important;
+		border-left: 0px;
+		border-right: 0px;
+	}
+}
