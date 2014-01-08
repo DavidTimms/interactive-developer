@@ -7,6 +7,8 @@ consoleBox = $("#console")
 
 animSpeed = 80
 
+cmdHistory = []
+
 lang = "javascript"
 compile = 
 	javascript: (source) -> source
@@ -36,6 +38,11 @@ window.pg =
 				content = require("marked")(content)
 			printUnescaped(content, "user")
 		return
+
+	saveScript: (filename) ->
+		fs.writeFile(filename, cmdHistory.join("\n\n"))
+		return
+
 
 	ls: -> fs.readdirSync(".").join("\n")
 	cwd: process.cwd
@@ -104,10 +111,11 @@ consoleBox.on "keydown", (e) ->
 		consoleBox.val("")
 		printBlock source
 		try
-			source = compile[lang](source)
-			res = eval.call(window, source)
+			compiled = compile[lang](source)
+			res = eval.call(window, compiled)
 			if res != undefined
 				printResult res
+			cmdHistory.push(source)
 		catch err
 			printResult err, "error"
 
