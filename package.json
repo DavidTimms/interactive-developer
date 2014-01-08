@@ -1,5 +1,14 @@
 {
   "name": "interactive-playground",
   "version": "0.0.1",
-  "main": "index.html"
+  "main": "index.html",
+  "window": {
+	"title": "Interactive Developer",
+	"toolbar": true,
+	"frame": true,
+	"width": 450,
+	"height": 600,
+	"min_width": 200,
+	"min_height": 200
+  }
 }

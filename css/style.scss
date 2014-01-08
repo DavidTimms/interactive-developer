@@ -2,8 +2,10 @@ $dark-grey: rgb(39, 40, 34);
 $grey: lighten($dark-grey, 60%);
 $light-grey: lighten($grey, 22%);
 
-body, html {
+* {
 	margin: 0px;
+}
+body, html {
 	padding: 0px;
 	height: 100%;
 	color: $dark-grey;
@@ -20,27 +22,29 @@ pre , textarea {
 	min-height: 100%;
 	height: auto !important;
 	height: 100%;
-	width: 70%;
+	width: 80%;
 	min-width: 500px;
 	max-width: 900px;
-	margin: 0 auto;
+	margin: 0px auto -150px;
 }
 
 #output, #console {
 	box-sizing: border-box;
 	width: 100%;
-	position: absolute;
+	position: relative;
 	left: 0px;
 }
 
 #output {
-	bottom: 150px;
+	 padding: 10px 0px 150px 0px;
 }
 
 .out-block {
+	position: relative;
 	display: block;
 	padding: 10px;
 	border-radius: 10px !important;
+	margin-top: 0px !important;
 	background-color: $dark-grey;
 	cursor: pointer;
 	&:hover {
@@ -49,17 +53,22 @@ pre , textarea {
 }
 
 .result-block {
+	position: relative;
 	box-sizing: border-box;
 	white-space: pre-wrap;
 	overflow-x: auto;
 	display: block;
 	padding: 2px 20px 10px;
-
 	color: $dark-grey;
 	width: 100%;
 }
 
+.unescaped {
+	font-family: sans-serif;
+}
+
 #console {
+	position: absolute;
 	color: $dark-grey;
 	padding: 10px;
 	height: 150px;

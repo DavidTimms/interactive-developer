@@ -1,5 +1,7 @@
+* {
+  margin: 0px; }
+
 body, html {
-  margin: 0px;
   padding: 0px;
   height: 100%;
   color: #272822;
@@ -14,30 +16,33 @@ pre, textarea {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  width: 70%;
+  width: 80%;
   min-width: 500px;
   max-width: 900px;
-  margin: 0 auto; }
+  margin: 0px auto -150px; }
 
 #output, #console {
   box-sizing: border-box;
   width: 100%;
-  position: absolute;
+  position: relative;
   left: 0px; }
 
 #output {
-  bottom: 150px; }
+  padding: 10px 0px 150px 0px; }
 
 .out-block {
+  position: relative;
   display: block;
   padding: 10px;
   border-radius: 10px !important;
+  margin-top: 0px !important;
   background-color: #272822;
   cursor: pointer; }
   .out-block:hover {
     background-color: #1a1a16; }
 
 .result-block {
+  position: relative;
   box-sizing: border-box;
   white-space: pre-wrap;
   overflow-x: auto;
@@ -46,7 +51,11 @@ pre, textarea {
   color: #272822;
   width: 100%; }
 
+.unescaped {
+  font-family: sans-serif; }
+
 #console {
+  position: absolute;
   color: #272822;
   padding: 10px;
   height: 150px;
