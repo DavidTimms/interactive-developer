@@ -298,13 +298,15 @@
     }
     if (cursor !== void 0) {
       e.preventDefault();
-      return editor.setValue(cmdHistory[cursor]);
+      editor.setValue(cmdHistory[cursor]);
+      return editor.navigateFileEnd();
     }
   });
 
   outputBox.on("click", ".out-block", function(e) {
     editor.focus();
-    return editor.setValue($(this).text());
+    editor.setValue($(this).text());
+    return editor.navigateFileEnd();
   });
 
   if (typeof process !== "undefined" && process !== null) {

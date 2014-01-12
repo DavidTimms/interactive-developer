@@ -211,10 +211,12 @@ consoleBox.on "keyup", (e) ->
 	if cursor != undefined
 		e.preventDefault()
 		editor.setValue(cmdHistory[cursor])
+		editor.navigateFileEnd()
 
 outputBox.on "click", ".out-block", (e) ->
 	editor.focus()
 	editor.setValue($(this).text())
+	editor.navigateFileEnd()
 
 process?.on "uncaughtException", (err) ->
 	printResult err, "error"
