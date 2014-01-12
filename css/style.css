@@ -4,12 +4,13 @@
 body, html {
   padding: 0px;
   height: 100%;
-  color: #272822;
-  background-color: #f7f7f5; }
+  color: #ededea;
+  background-color: #3d3e35; }
 
-pre, textarea {
+pre, textarea, #console {
   font-size: 16px;
-  font-family: Consolas, Monaco, 'Andale Mono', monospace; }
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+  tab-size: 4; }
 
 .container {
   position: relative;
@@ -29,17 +30,16 @@ pre, textarea {
 
 #output {
   padding: 10px 0px 150px 0px; }
-
-.out-block {
-  position: relative;
-  display: block;
-  padding: 10px;
-  border-radius: 10px !important;
-  margin-top: 0px !important;
-  background-color: #272822;
-  cursor: pointer; }
-  .out-block:hover {
-    background-color: #1a1a16; }
+  #output .out-block {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-top: 0px;
+    background-color: #272822;
+    cursor: pointer; }
+    #output .out-block:hover {
+      background-color: #1a1a16; }
 
 .result-block {
   position: relative;
@@ -47,29 +47,30 @@ pre, textarea {
   white-space: pre-wrap;
   overflow-x: auto;
   display: block;
-  padding: 2px 20px 10px;
-  color: #272822;
+  padding: 2px 10px 10px 25px;
+  text-shadow: 1px 1px 8px #1a1a16;
   width: 100%; }
 
+.success {
+  color: #a6e22e; }
+
+.error {
+  color: #ff0f3c; }
+
+.user {
+  color: #66d9ef; }
+
 .unescaped {
+  padding-top: 10px;
+  text-shadow: none;
   font-family: sans-serif; }
 
 #console {
   position: absolute;
-  color: #272822;
-  padding: 10px;
   height: 150px;
   bottom: 0px;
-  outline-color: transparent;
-  outline: none;
   border-radius: 10px 10px 0px 0px;
-  border: 1px solid #c2c3b9;
-  border-bottom: 0px;
-  background-color: #f7f7f5;
-  resize: none;
-  background-color: #fefefe; }
-  #console:focus {
-    background-color: white; }
+  border: 1px solid #3d3e35; }
 
 @media screen and (max-width: 500px) {
   .container {

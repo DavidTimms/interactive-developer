@@ -1,6 +1,10 @@
 $dark-grey: rgb(39, 40, 34);
-$grey: lighten($dark-grey, 60%);
+$grey: lighten($dark-grey, 8%);
+//$grey: #4c4d46;
 $light-grey: lighten($grey, 22%);
+$green: #a6e22e;
+$red: rgb(255, 15, 60);
+$blue: #66d9ef;
 
 * {
 	margin: 0px;
@@ -8,13 +12,14 @@ $light-grey: lighten($grey, 22%);
 body, html {
 	padding: 0px;
 	height: 100%;
-	color: $dark-grey;
-	background-color: $light-grey;
+	color: lighten($grey, 70%);
+	background-color: $grey;
 }
 
-pre , textarea {
+pre , textarea, #console {
 	font-size: 16px;
 	font-family: Consolas, Monaco, 'Andale Mono', monospace;
+	tab-size: 4;
 }
 
 .container {
@@ -37,18 +42,17 @@ pre , textarea {
 
 #output {
 	 padding: 10px 0px 150px 0px;
-}
-
-.out-block {
-	position: relative;
-	display: block;
-	padding: 10px;
-	border-radius: 10px !important;
-	margin-top: 0px !important;
-	background-color: $dark-grey;
-	cursor: pointer;
-	&:hover {
-		background-color: darken($dark-grey, 5%);
+	.out-block {
+		position: relative;
+		display: block;
+		padding: 10px 15px;
+		border-radius: 10px;
+		margin-top: 0px;
+		background-color: $dark-grey;
+		cursor: pointer;
+		&:hover {
+			background-color: darken($dark-grey, 5%);
+		}
 	}
 }
 
@@ -58,32 +62,41 @@ pre , textarea {
 	white-space: pre-wrap;
 	overflow-x: auto;
 	display: block;
-	padding: 2px 20px 10px;
-	color: $dark-grey;
+	padding: 2px 10px 10px 25px;
+	text-shadow: 1px 1px 8px darken($dark-grey, 5%);
 	width: 100%;
 }
 
+.success {
+	color: $green;
+}
+.error {
+	color: $red;
+}
+.user {
+	color: $blue;
+}
+
 .unescaped {
+	padding-top: 10px;
+	text-shadow: none;
 	font-family: sans-serif;
 }
 
 #console {
 	position: absolute;
-	color: $dark-grey;
-	padding: 10px;
+	//color: $dark-grey;
+	//padding: 10px;
 	height: 150px;
 	bottom: 0px;
-	outline-color: transparent;
-	outline: none;
+	//outline-color: transparent;
+	//outline: none;
 	border-radius: 10px 10px 0px 0px;
 	border: 1px solid $grey;
-	border-bottom: 0px;
-	background-color: $light-grey;
-	resize: none;
-	background-color: lighten($light-grey, 3%);
-	&:focus {
-		background-color: lighten($light-grey, 5%);
-	}
+	//border-bottom: 0px;
+	//background-color: $light-grey;
+	//resize: none;
+	//background-color: lighten($light-grey, 3%);
 }
 
 @media screen and (max-width: 500px) {
